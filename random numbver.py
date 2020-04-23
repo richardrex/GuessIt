@@ -73,6 +73,10 @@ def game():
                     print("Ow See u next time(")
                     time.sleep(1)
                     play_quit()
+                while b not in ['Y', 'y', 'N', 'n']:
+                    b = input("Invalid input. Wanna play again? Y/N")
+                    if b == "N" or a == "n":
+                        play_quit()
 
             else:
                 if guess > guessing_number:
@@ -84,8 +88,11 @@ def game():
                         play_quit()
                     elif a == "Y" or a == "y":
                         print("Great try again!")
-                    else:
-                        print("Sorry, Wrong input!")
+                    while a not in ['Y', 'y', 'N', 'n']:
+                        a = input("Invalid input. Wanna play again? Y/N")
+                        if a == "N" or a == "n":
+                            play_quit()
+
                 if guess < guessing_number:
                     print("Lost! Your namber is too small. Wanna play again? y/N")
                     a = input()
@@ -96,8 +103,10 @@ def game():
                     elif a == "Y" or a == "y":
                         print("Great try again!")
 
-                    else:
-                        print("Sorry, Wrong input!")
+                    while a not in ['Y', 'y', 'N', 'n']:
+                        a = input("Invalid input. Wanna play again? Y/N")
+                        if a == "N" or a == "n":
+                            play_quit()
 
 
 main_menu()
